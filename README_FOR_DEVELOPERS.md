@@ -4,6 +4,10 @@
 ng new <app name>
     e.g.: MyStoreAngular
 
+## Install dependencies
+cd your app folder
+npm install
+
 ## Implement product list
 ng generate component product_list
 
