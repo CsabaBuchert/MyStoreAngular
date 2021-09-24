@@ -1,6 +1,9 @@
 # MyStore development progress
 
-## Add dependencies
-Install all necessary node extension/module
+## Create Angular application
+ng new <app name>
+    e.g.: MyStoreAngular
 
-## Create Angular  application
+## Implement product list
+ng generate component product_list
+
