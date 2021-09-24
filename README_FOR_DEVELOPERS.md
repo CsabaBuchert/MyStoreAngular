@@ -10,4 +10,6 @@ npm install
 
 ## Implement product list
 ng generate component product_list
+ng generate component product_item
+ng generate component product_item_detail
 
