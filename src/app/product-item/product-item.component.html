@@ -1,1 +1,17 @@
-<p>product-item works!</p>
+<div *ngIf="product" class='product-container'>
+    <img class='product-image' src={{product.image_url}}>
+    <div class='product-detail'>
+        <div class='product-detail title'>
+            {{product.name}}
+        </div>
+        <div class='product-detail price'>
+            {{product.price}}
+        </div>
+
+        <!-- It necessary to detailed view only
+        <div class='product-detail description'>
+            {{product.description}}
+        </div>
+        -->
+    </div>
+</div>
