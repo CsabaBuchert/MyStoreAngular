@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from '../message.service';
 import { ProductItem } from '../product-item/product-item';
 import { PRODUCTS } from './mock.product-list';
 
@@ -10,9 +11,17 @@ import { PRODUCTS } from './mock.product-list';
 export class ProductListComponent implements OnInit {
   products: ProductItem[] = PRODUCTS;
 
-  constructor() { }
+  constructor(private messageService: MessageService) { }
 
   ngOnInit(): void {
+    this.log(`init`);
   }
 
+  onSelect(product: ProductItem): void {
+    this.log(`select product: ${product.name}`);
+  }
+
+  private log(message: string) {
+    this.messageService.add(`ProductListComponent: ${message}`);
+  }
 }
