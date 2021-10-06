@@ -17,10 +17,6 @@ export class ProductListComponent implements OnInit {
     this.log(`init`);
   }
 
-  onSelect(product: ProductItem): void {
-    this.log(`select product: ${product.name}`);
-  }
-
   private log(message: string) {
     this.messageService.add(`ProductListComponent: ${message}`);
   }

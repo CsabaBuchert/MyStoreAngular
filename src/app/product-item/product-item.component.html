@@ -1,5 +1,7 @@
 <div *ngIf="product" class='product-container'>
-    <img class='product-image' src={{product.image_url}}>
+    <a routerLink="/store/{{product.id}}">
+        <img class='product-image' src={{product.image_url}} (click)="onSelect()">
+    </a>
     <div class='product-detail'>
         <div class='product-detail title'>
             {{product.name}}
@@ -7,11 +9,9 @@
         <div class='product-detail price'>
             {{product.price}}
         </div>
-
-        <!-- It necessary to detailed view only
-        <div class='product-detail description'>
-            {{product.description}}
+        <div class='select-input'>
+            <input type='number' min=1 max=20 value=1 [(ngModel)]="selectInput">
         </div>
-        -->
+        <button (click)="addToCart()">Add to cart</button>
     </div>
 </div>
