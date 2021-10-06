@@ -1,5 +1,8 @@
-<ul class='cart-container'>
-    <li *ngFor='let c of cart | keyvalue'>
-        <app-product-item-cart [product]='getProduct(c.key)' [quantity]='c.value'></app-product-item-cart>
-    </li>
-</ul>
+<div class='cart-main' fxLayout='row'>
+    <div class='cart-container' fxLayout='column'>
+        <app-product-item-cart *ngFor='let c of cart | keyvalue' [product]='getProduct(c.key)' [quantity]='c.value'>
+        </app-product-item-cart>
+        <h1 [innerText]='"Total: $" + getTotalPrice()'></h1>
+    </div>
+    <app-order></app-order>
+</div>

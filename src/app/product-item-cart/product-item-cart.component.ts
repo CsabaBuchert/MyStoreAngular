@@ -26,4 +26,8 @@ export class ProductItemCartComponent implements OnInit {
   quantityChanged(): void {
     this.cartService.edit(this.product.id, this.quantity);
   }
+
+  removeFromCart(): void {
+    this.cartService.remove(this.product.id);
+  }
 }

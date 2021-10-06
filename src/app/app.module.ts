@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductItemCartComponent } from './product-item-cart/product-item-cart.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     CartComponent,
     MessagesComponent,
     ProductItemCartComponent,
-    NavBarComponent
+    NavBarComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

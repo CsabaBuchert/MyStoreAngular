@@ -31,6 +31,16 @@ export class CartComponent implements OnInit {
     return { id: 0, name: '', price: 0, description: '', url: '' };
   }
 
+  getTotalPrice(): number {
+    let total: number = 0;
+    this.cart.forEach((value, id) => {
+      const p = this.getProduct(id);
+      this.log(`id: ${id}, value: ${value}, price: ${p.price}`);
+      total += p.price * value;
+    });
+    return total;
+  }
+
   private log(message: string) {
     this.messageService.add(`CartComponent: ${message}`);
   }
