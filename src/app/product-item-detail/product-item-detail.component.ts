@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { ProductItem } from '../product-item/product-item';
+import { ProductItem } from '../product-item';
 import { MessageService } from '../message.service';
 import { PRODUCTS } from '../product-list/mock.product-list';
 

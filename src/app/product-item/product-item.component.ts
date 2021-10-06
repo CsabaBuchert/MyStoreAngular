@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
-import { ProductItem } from './product-item';
+import { ProductItem } from '../product-item';
 
 @Component({
   selector: 'app-product-item',

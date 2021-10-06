@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
-import { ProductItem } from '../product-item/product-item';
+import { ProductItem } from '../product-item';
 import { PRODUCTS } from './mock.product-list';
 
 @Component({
