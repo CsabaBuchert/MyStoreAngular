@@ -1,6 +1,6 @@
 <div *ngIf="product" class='product-container'>
     <a routerLink="/store/{{product.id}}">
-        <img class='product-image' src={{product.image_url}} (click)="onSelect()">
+        <img class='product-image' src={{product.url}} (click)="onSelect()">
     </a>
     <div class='product-detail'>
         <div class='product-detail title'>

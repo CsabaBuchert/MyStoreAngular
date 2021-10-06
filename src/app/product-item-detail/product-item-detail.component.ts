@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProductItem } from '../product-item';
 import { MessageService } from '../message.service';
-import { PRODUCTS } from '../product-list/mock.product-list';
 import { CartService } from '../cart.service';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-item-detail',
@@ -16,22 +16,23 @@ export class ProductItemDetailComponent implements OnInit {
     id: 0,
     name: '',
     description: '',
-    image_url: '',
+    url: '',
     price: 0
   };
   selectInput: number = 1;
 
-  constructor(private route: ActivatedRoute, private location: Location, private cartService: CartService, private messageService: MessageService) {
-    const id = parseInt(this.route.snapshot.paramMap.get('id') as unknown as string);
-
-    // temporary solution
-    const p = PRODUCTS.find(e => e.id === id);
-    if (p) {
-      this.product = p;
-    }
+  constructor(private route: ActivatedRoute, private location: Location, private cartService: CartService, private productService: ProductService, private messageService: MessageService) {
   }
 
   ngOnInit(): void {
+    const id = parseInt(this.route.snapshot.paramMap.get('id') as unknown as string);
+
+    this.productService.get().subscribe(data => {
+      const p = data.find(e => e.id === id);
+      if (p) {
+        this.product = p;
+      }
+    });
   }
 
   addToCart() {

@@ -14,7 +14,7 @@ export class ProductItemComponent implements OnInit {
     name: '',
     price: 0,
     description: '',
-    image_url: ''
+    url: ''
   };
 
   selectInput: number = 1;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
 import { ProductItem } from '../product-item';
-import { PRODUCTS } from './mock.product-list';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,12 +9,16 @@ import { PRODUCTS } from './mock.product-list';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: ProductItem[] = PRODUCTS;
+  products: ProductItem[] = [];
 
-  constructor(private messageService: MessageService) { }
+  constructor(private productService: ProductService, private messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.log(`init`);
+    this.log(`Init`);
+    this.productService.get().subscribe(data => {
+      this.products = data;
+      this.log(`Got products!`);
+    });
   }
 
   private log(message: string) {

@@ -1,14 +1,14 @@
 <div class='detail-container'>
-    <img class='product-image' src={{product?.image_url}}>
+    <img class='product-image' src={{product.url}}>
     <div class='product-detail box'>
         <h3 class='product-detail title'>
-            {{product?.name}}
+            {{product.name}}
         </h3>
         <h4 class='product-detail price'>
-            {{product?.price}}
+            {{product.price}}
         </h4>
         <p class='product-detail description'>
-            {{product?.description}}
+            {{product.description}}
         </p>
         <input class='product-detail select-input' type='number' min=1 max=20 value=1 [(ngModel)]="selectInput">
         <button (click)="addToCart()">Add to cart</button>

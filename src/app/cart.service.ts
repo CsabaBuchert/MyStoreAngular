@@ -11,7 +11,7 @@ export class CartService {
 
   constructor(private messageService: MessageService) { }
 
-  getContents(): Map<number, number> {
+  get(): Map<number, number> {
     return this.contents;
   }
 
