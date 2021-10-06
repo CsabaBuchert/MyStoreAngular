@@ -10,6 +10,7 @@ import { CartComponent } from './cart/cart.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ProductItemCartComponent } from './product-item-cart/product-item-cart.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     ProductItemComponent,
     ProductItemDetailComponent,
     CartComponent,
-    MessagesComponent
+    MessagesComponent,
+    ProductItemCartComponent
   ],
   imports: [
     BrowserModule,

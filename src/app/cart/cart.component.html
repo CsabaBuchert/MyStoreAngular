@@ -1,1 +1,5 @@
-<p>cart works!</p>
+<ul class='cart-container'>
+    <li *ngFor='let c of cart | keyvalue'>
+        <app-product-item-cart [product]='getProduct(c.key)' [quantity]='c.value'></app-product-item-cart>
+    </li>
+</ul>

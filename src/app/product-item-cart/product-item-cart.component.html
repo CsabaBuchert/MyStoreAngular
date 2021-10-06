@@ -1,0 +1,13 @@
+<div class='detail-container'>
+    <img class='product-image' src={{product.url}}>
+    <div class='product-detail box'>
+        <h3 class='product-detail title'>
+            {{product.name}}
+        </h3>
+        <h4 class='product-detail price'>
+            {{product.price}}
+        </h4>
+        <input class='product-detail select-input' type='number' min=1 max=20 [(ngModel)]='quantity'
+            (ngModelChange)='quantityChanged()'>
+    </div>
+</div>

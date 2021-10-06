@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { CartItem } from './cart-item';
 import { MessageService } from './message.service';
 
 @Injectable({
