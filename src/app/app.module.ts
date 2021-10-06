@@ -10,6 +10,7 @@ import { CartComponent } from './cart/cart.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductItemCartComponent } from './product-item-cart/product-item-cart.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
@@ -27,6 +28,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   imports: [
     BrowserModule,
     FormsModule,
+    FlexLayoutModule,
     AppRoutingModule,
     HttpClientModule
   ],
