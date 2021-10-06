@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { ProductItem } from '../product-item';
 import { MessageService } from '../message.service';
 import { PRODUCTS } from '../product-list/mock.product-list';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-item-detail',
@@ -20,7 +21,7 @@ export class ProductItemDetailComponent implements OnInit {
   };
   selectInput: number = 1;
 
-  constructor(private route: ActivatedRoute, private location: Location, private messageService: MessageService) {
+  constructor(private route: ActivatedRoute, private location: Location, private cartService: CartService, private messageService: MessageService) {
     const id = parseInt(this.route.snapshot.paramMap.get('id') as unknown as string);
 
     // temporary solution
@@ -35,6 +36,7 @@ export class ProductItemDetailComponent implements OnInit {
 
   addToCart() {
     this.log(`Add to cart ${this.selectInput} ${this.product?.name}`);
+    this.cartService.add(this.product.id, this.selectInput);
   }
 
   goBack(): void {
