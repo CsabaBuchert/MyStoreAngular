@@ -12,10 +12,16 @@ export class OrderComponent implements OnInit {
   address: string = '';
   credit_card: number = 0;
 
+  @Output() submitted = new EventEmitter();
+
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.cart = this.cartService.getAll();
+  }
+
+  onSubmit() {
+    this.submitted.emit();
   }
 
   isEmpty(): boolean {

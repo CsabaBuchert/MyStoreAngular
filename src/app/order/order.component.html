@@ -1,4 +1,4 @@
-<form #form='ngForm'>
+<form #form='ngForm' (ngSubmit)='onSubmit()'>
     <h3>Full name</h3>
     <input type='text' name='full_name' required minlength='3' [(ngModel)]='full_name'
         placeholder='Minimum 3 character'>
