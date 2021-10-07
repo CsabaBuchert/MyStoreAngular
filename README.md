@@ -1,5 +1,7 @@
 # MyStoreAngular
 
+## description
+This is a simple webshop application where you can add products to the cart, delete them from there, or modify them. Finally, the order can be finalized.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
 
 ## prerequisites
