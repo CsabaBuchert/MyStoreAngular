@@ -8,3 +8,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: royalblue;
     border-color: white;
 }
+
+.btn:disabled {
+    background-color: grey;
+}

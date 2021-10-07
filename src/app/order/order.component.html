@@ -11,6 +11,6 @@
     <br>
     <p>We'll never share your payment details with anyone else.</p>
     <br>
-    <input routerLink="/order_completed" type='submit' [disabled]='form.invalid && isEmpty()' value='Submit'
+    <input routerLink="/order_completed" type='submit' [disabled]='form.invalid || isEmpty()' value='Submit'
         class='btn btn-primary'>
 </form>
