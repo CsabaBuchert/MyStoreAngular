@@ -5,7 +5,7 @@
             {{product.name}}
         </h2>
         <h3 class='product-detail price'>
-            {{product.price}}
+            ${{product.price}}
         </h3>
         <input class='product-detail select-input' type='number' min=1 max=20 [(ngModel)]='quantity'
             (ngModelChange)='quantityChanged()'>
