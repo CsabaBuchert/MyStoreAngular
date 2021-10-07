@@ -16,29 +16,19 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService, private productService: ProductService, private messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.cart = this.cartService.get();
-    this.productService.get().subscribe(data => {
+    this.cart = this.cartService.getAll();
+    this.productService.getAll().subscribe(data => {
       this.log(`Got products!`);
       this.products = data;
     });
   }
 
   getProduct(id: number): ProductItem {
-    const p = this.products.find(e => e.id === id);
-    if (p)
-      return p;
-    this.log(`Invalid product!`);
-    return { id: 0, name: '', price: 0, description: '', url: '' };
+    return this.cartService.getProduct(id);
   }
 
   getTotalPrice(): number {
-    let total: number = 0;
-    this.cart.forEach((value, id) => {
-      const p = this.getProduct(id);
-      this.log(`id: ${id}, value: ${value}, price: ${p.price}`);
-      total += p.price * value;
-    });
-    return total;
+    return this.cartService.getTotalPrice();
   }
 
   private log(message: string) {

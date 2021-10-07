@@ -27,7 +27,7 @@ export class ProductItemDetailComponent implements OnInit {
   ngOnInit(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id') as unknown as string);
 
-    this.productService.get().subscribe(data => {
+    this.productService.getAll().subscribe(data => {
       const p = data.find(e => e.id === id);
       if (p) {
         this.product = p;
@@ -38,6 +38,7 @@ export class ProductItemDetailComponent implements OnInit {
   addToCart() {
     this.log(`Add to cart ${this.selectInput} ${this.product?.name}`);
     this.cartService.add(this.product.id, this.selectInput);
+    alert(`${this.selectInput} ${this.product.name} added to cart!`)
   }
 
   goBack(): void {

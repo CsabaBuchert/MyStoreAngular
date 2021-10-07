@@ -11,7 +11,7 @@ export class ProductService {
   constructor(private http: HttpClient) {
   }
 
-  get(): Observable<ProductItem[]> {
+  getAll(): Observable<ProductItem[]> {
     // idea from here: https://www.codegrepper.com/code-examples/javascript/angular+load+json+file+with+httpclient
     // it's easy to replace to valid data source
     return this.http.get<[]>('../assets/data.json');

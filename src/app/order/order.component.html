@@ -1,4 +1,4 @@
-<form #form='ngForm' (ngSubmit)='submitForm()'>
+<form #form='ngForm'>
     <h3>Full name</h3>
     <input type='text' name='full_name' required minlength='3' [(ngModel)]='full_name'
         placeholder='Minimum 3 character'>
@@ -11,5 +11,6 @@
     <br>
     <p>We'll never share your payment details with anyone else.</p>
     <br>
-    <input type='submit' [disabled]='form.invalid && cart.size' value='Submit' class='btn btn-primary'>
+    <input routerLink="/order_completed" type='submit' [disabled]='form.invalid && isEmpty()' value='Submit'
+        class='btn btn-primary'>
 </form>

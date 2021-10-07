@@ -31,6 +31,7 @@ export class ProductItemComponent implements OnInit {
   addToCart() {
     this.log(`Add to cart ${this.selectInput} ${this.product?.name}`);
     this.cartService.add(this.product.id, this.selectInput);
+    alert(`${this.selectInput} ${this.product.name} added to cart!`)
   }
 
   private log(message: string) {
